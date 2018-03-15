@@ -10,7 +10,11 @@ import { MovieService } from './movie.service';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CommentComponent } from './comment/comment.component';
+import { HttpClientModule } from '@angular/common/http';
 
+import { Movie } from './model/Movie';
+import { MovieShort } from './model/movie-short';
+import { MovieResponse } from './model/movie-response';
 
 @NgModule({
   declarations: [
@@ -23,11 +27,13 @@ import { CommentComponent } from './comment/comment.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     MovieService
   ],
+  exports: [Movie, MovieShort, MovieResponse],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
