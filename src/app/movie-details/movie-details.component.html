@@ -1,3 +1,14 @@
-<p>
-  movie-details works!
-</p>
+<div *ngIf="movie">
+    <app-movie-entry [movie]="movie"></app-movie-entry>
+</div>
+<div *ngIf="comments">
+    <ol>
+        <li *ngFor="let comment of comments">
+            <app-comment [comment]="comment"></app-comment>
+        </li>
+    </ol>
+</div>
+<h5>New post</h5>
+<input [(ngModel)]="newComment.author" placeholder="Author...">
+<input [(ngModel)]="newComment.text" placeholder="Content...">
+<button (click)="submitComment()">Submit</button>
