@@ -1,0 +1,7 @@
+<h4>{{ movie.original_title | uppercase }}</h4>
+<h5>Release date: {{ movie.release_date }}</h5>
+<h5>Rating: <span [style.color]="voteColor()" >{{ movie.vote_average }}</span> / 10</h5>
+<h5>Runtime: {{ movie.runtime }} min</h5>
+<p [innerHTML]="movie.overview"></p>
+
+<app-movie-details [movie]="movie"></app-movie-details>
