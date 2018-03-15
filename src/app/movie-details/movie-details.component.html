@@ -1,5 +1,11 @@
 <div *ngIf="movie">
-    <app-movie-entry [movie]="movie"></app-movie-entry>
+    <h4>{{ movie.original_title | uppercase }}  </h4>
+    <ol>
+        <li>Release date: {{ movie.release_date }}</li>
+        <li>Rating: <span [style.color]="voteColor()" >{{ movie.vote_average }}</span> / 10</li>
+        <li>Runtime: {{ movie.runtime }} min</li>
+    </ol>
+    <p [innerHTML]="movie.overview"></p>
 </div>
 <div *ngIf="comments">
     <ol>

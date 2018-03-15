@@ -1,5 +1,6 @@
 <h4><a routerLink="/movies/{{movie.id}}">{{ movie.original_title | uppercase }}</a></h4>
-<h5>Release date: {{ movie.release_date }}</h5>
-<h5>Rating: <span [style.color]="voteColor()" >{{ movie.vote_average }}</span> / 10</h5>
-<h5>Runtime: {{ movie.runtime }} min</h5>
+<ol>
+    <li>Release date: {{ movie.release_date }}</li>
+    <li>Rating: <span [style.color]="voteColor()" >{{ movie.vote_average }}</span> / 10</li>
+</ol>
 <p [innerHTML]="movie.overview"></p>

@@ -1,4 +1,4 @@
-import MovieShort from './movie-short';
+import { MovieShort } from './movie-short';
 
 export class MovieResponse {
     page: number;

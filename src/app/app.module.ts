@@ -33,7 +33,7 @@ import { MovieResponse } from './model/movie-response';
   providers: [
     MovieService
   ],
-  exports: [Movie, MovieShort, MovieResponse],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

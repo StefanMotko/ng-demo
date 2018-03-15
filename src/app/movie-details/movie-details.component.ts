@@ -31,7 +31,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   getMovie() {
-    this.movieService.getMovie(this.movieId).subscribe(movie => { this.movie = movie });
+    this.movieService.getMovieDetail(this.movieId).subscribe(movie => { this.movie = movie });
   }
 
   getComments() {
@@ -42,6 +42,10 @@ export class MovieDetailsComponent implements OnInit {
     this.movieService.saveComment(this.movieId, this.newComment);
     this.newComment = new Comment();
     this.getComments();
+  }
+
+  public voteColor(): string {
+    return `rgb(${Math.round(255 * (10 - this.movie.vote_average) / 10)}, ${Math.round(255 * this.movie.vote_average / 10)}, 0)`;
   }
 
 }
